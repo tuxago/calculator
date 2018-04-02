@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class Program
+    public class Program
     {
-        private static int Add(int a, int b)
+        public static int Add(int a, int b)
         {
             return a + b;
         }
 
-        private static int Sub(int a, int b)
+        public static int Sub(int a, int b)
         {
             return a - b;
         }
         
-        private static int Mul(int a, int b)
+        public static int Mul(int a, int b)
         {
             return a * b;
         }
 
-        private static int Floor(int a, int b)
+        public static int Floor(int a, int b)
         {
             return a / b;
         }
 
-        private static float Div(float a, int b)
+        public static float Div(float a, int b)
         {
             return a / b;
         }
