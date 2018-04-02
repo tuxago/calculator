@@ -34,12 +34,37 @@ namespace Calculator
         }
 
 
-
+        public delegate int OpDelegate(int a, int b);
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World. {0} {1} {2} {3}", Add(1, 2), Sub(1, 2), Mul(2, 4), Div(3, 2));
-            Console.ReadKey();
+            if (args.Length != 3 )
+            {
+                Console.WriteLine("ERROR: should pass 3 args.\n\tusage: calculator <a> <operator> <b>");
+                return;
+     
+            }
+
+
+            int a = int.Parse(args[0]);
+            int b = int.Parse(args[2]);
+
+            OpDelegate op = Mul;
+            switch(args[1]) {
+                case "+":
+                    op = Add;
+                    break;
+                case "-":
+                    op = Sub;
+                    break;
+                case "*":
+                    op = Mul;
+                    break;
+                case "/":
+                    Console.WriteLine(Div(a, b));
+                    return;
+            }
+            Console.WriteLine(op(a, b));
         }
     }
 }
